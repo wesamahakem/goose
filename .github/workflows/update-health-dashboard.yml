@@ -75,36 +75,26 @@ jobs:
             const timestamp = new Date().toUTCString();
             const formattedDate = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
             
-            const dashboardBody = `# GitHub Health
-
-**Updated:** ${formattedDate}
-
-## Issues
-
-**Open:** ${totalOpenIssues}
-
-**No labels:** ${issuesWithoutLabels.length} (these are recent)
-
-### Label Breakdown
-
-| Label | Count |
-|-------|-------|
-| [P0](https://github.com/${owner}/${repo}/labels/P0) | ${labelCounts['P0'] || 0} |
-| [P1](https://github.com/${owner}/${repo}/labels/P1) | ${labelCounts['P1'] || 0} |
-| [Compaction](https://github.com/${owner}/${repo}/labels/Compaction) | ${labelCounts['Compaction'] || 0} |
-| [Windows](https://github.com/${owner}/${repo}/labels/Windows) | ${labelCounts['Windows'] || 0} |
-| [Provider](https://github.com/${owner}/${repo}/labels/Provider) | ${labelCounts['Provider'] || 0} |
-| [MCP/Extensions](https://github.com/${owner}/${repo}/labels/MCP%2FExtensions) | ${labelCounts['MCP/Extensions'] || 0} |
-| [Linux](https://github.com/${owner}/${repo}/labels/Linux) | ${labelCounts['Linux'] || 0} |
-
-## Open PRs
-
-**Total:** ${totalOpenPRs}
-
----
-
-*Last updated: ${timestamp}*
-*This dashboard is automatically updated daily by [GitHub Actions](https://github.com/${owner}/${repo}/actions/workflows/update-health-dashboard.yml)*`;
+            const dashboardBody = '# GitHub Health\n\n' +
+              '**Updated:** ' + formattedDate + '\n\n' +
+              '## Issues\n\n' +
+              '**Open:** ' + totalOpenIssues + '\n\n' +
+              '**No labels:** ' + issuesWithoutLabels.length + ' (these are recent)\n\n' +
+              '### Label Breakdown\n\n' +
+              '| Label | Count |\n' +
+              '|-------|-------|\n' +
+              '| [P0](https://github.com/' + owner + '/' + repo + '/labels/P0) | ' + (labelCounts['P0'] || 0) + ' |\n' +
+              '| [P1](https://github.com/' + owner + '/' + repo + '/labels/P1) | ' + (labelCounts['P1'] || 0) + ' |\n' +
+              '| [Compaction](https://github.com/' + owner + '/' + repo + '/labels/Compaction) | ' + (labelCounts['Compaction'] || 0) + ' |\n' +
+              '| [Windows](https://github.com/' + owner + '/' + repo + '/labels/Windows) | ' + (labelCounts['Windows'] || 0) + ' |\n' +
+              '| [Provider](https://github.com/' + owner + '/' + repo + '/labels/Provider) | ' + (labelCounts['Provider'] || 0) + ' |\n' +
+              '| [MCP/Extensions](https://github.com/' + owner + '/' + repo + '/labels/MCP%2FExtensions) | ' + (labelCounts['MCP/Extensions'] || 0) + ' |\n' +
+              '| [Linux](https://github.com/' + owner + '/' + repo + '/labels/Linux) | ' + (labelCounts['Linux'] || 0) + ' |\n\n' +
+              '## Open PRs\n\n' +
+              '**Total:** ' + totalOpenPRs + '\n\n' +
+              '---\n\n' +
+              '*Last updated: ' + timestamp + '*\n' +
+              '*This dashboard is automatically updated daily by [GitHub Actions](https://github.com/' + owner + '/' + repo + '/actions/workflows/update-health-dashboard.yml)*';
 
             console.log('Dashboard generated, updating discussion...');
 
