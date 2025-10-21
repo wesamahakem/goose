@@ -53,7 +53,7 @@ jobs:
 
             // Count issues by specific labels
             const labelCounts = {};
-            const targetLabels = ['P0', 'P1', 'Compaction', 'Windows', 'Provider', 'MCP/Extensions', 'Linux'];
+            const targetLabels = ['p0', 'p1', 'compaction', 'windows', 'provider', 'mcp', 'linux'];
             
             targetLabels.forEach(label => {
               labelCounts[label] = issues.filter(issue => 
@@ -83,13 +83,13 @@ jobs:
               '### Label Breakdown\n\n' +
               '| Label | Count |\n' +
               '|-------|-------|\n' +
-              '| [P0](https://github.com/' + owner + '/' + repo + '/labels/P0) | ' + (labelCounts['P0'] || 0) + ' |\n' +
-              '| [P1](https://github.com/' + owner + '/' + repo + '/labels/P1) | ' + (labelCounts['P1'] || 0) + ' |\n' +
-              '| [Compaction](https://github.com/' + owner + '/' + repo + '/labels/Compaction) | ' + (labelCounts['Compaction'] || 0) + ' |\n' +
-              '| [Windows](https://github.com/' + owner + '/' + repo + '/labels/Windows) | ' + (labelCounts['Windows'] || 0) + ' |\n' +
-              '| [Provider](https://github.com/' + owner + '/' + repo + '/labels/Provider) | ' + (labelCounts['Provider'] || 0) + ' |\n' +
-              '| [MCP/Extensions](https://github.com/' + owner + '/' + repo + '/labels/MCP%2FExtensions) | ' + (labelCounts['MCP/Extensions'] || 0) + ' |\n' +
-              '| [Linux](https://github.com/' + owner + '/' + repo + '/labels/Linux) | ' + (labelCounts['Linux'] || 0) + ' |\n\n' +
+              '| [P0](https://github.com/' + owner + '/' + repo + '/labels/p0) | ' + (labelCounts['p0'] || 0) + ' |\n' +
+              '| [P1](https://github.com/' + owner + '/' + repo + '/labels/p1) | ' + (labelCounts['p1'] || 0) + ' |\n' +
+              '| [Compaction](https://github.com/' + owner + '/' + repo + '/labels/compaction) | ' + (labelCounts['compaction'] || 0) + ' |\n' +
+              '| [Windows](https://github.com/' + owner + '/' + repo + '/labels/windows) | ' + (labelCounts['windows'] || 0) + ' |\n' +
+              '| [Provider](https://github.com/' + owner + '/' + repo + '/labels/provider) | ' + (labelCounts['provider'] || 0) + ' |\n' +
+              '| [MCP](https://github.com/' + owner + '/' + repo + '/labels/mcp) | ' + (labelCounts['mcp'] || 0) + ' |\n' +
+              '| [Linux](https://github.com/' + owner + '/' + repo + '/labels/linux) | ' + (labelCounts['linux'] || 0) + ' |\n\n' +
               '## Open PRs\n\n' +
               '**Total:** ' + totalOpenPRs + '\n\n' +
               '---\n\n' +
